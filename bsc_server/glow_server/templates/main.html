@@ -1,0 +1,94 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BSc Project</title>
+    <link rel="stylesheet" , href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Face Aging Platform with Generative Models</h1>
+        <form method="POST" action="/submit_form/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image">Select an image</label>
+            <input type="file" id="image" name="image">
+            <br>
+            <div class="dropdown">
+                <select name="dropdown-option">
+                    <option value="old">Make Older</option>
+                    <option value="young">Make Younger</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <label for="value">Choose Alpha</label>
+            <!-- <input type="text" id="alpha" name="alpha"> -->
+            <input type="range" min="1" max="2" step="0.1" value="1.2" id="alpha" name="alpha">
+            <p>Value: <span id="demo"></span></p>
+            <br>
+            <br>
+            <input type="submit" value="Submit" onclick="move()">
+
+            <div id="myProgress">
+                <div id="myBar">0%</div>
+            </div>
+
+            <script>
+                var slider = document.getElementById("alpha");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function () {
+                    output.innerHTML = this.value;
+                }
+            </script>
+
+            <script>
+                var i = 0;
+                var duration = 60000; // Duration in milliseconds (46 seconds)
+
+                function move() {
+                    if (i == 0) {
+                        i = 1;
+                        var elem = document.getElementById("myBar");
+                        var width = 0;
+                        var increment = 100 / (duration / 10); // Calculate the increment per 10 milliseconds
+                        var id = setInterval(frame, 10);
+
+                        function frame() {
+                            if (width >= 100) {
+                                clearInterval(id);
+                                i = 0;
+                            } else {
+                                width += increment;
+                                elem.style.width = width + "%";
+                                elem.innerHTML = Math.round(width) + "%";
+                            }
+                        }
+                    }
+                }
+            </script>
+
+            <script>
+                const dropdown = document.querySelector('.dropdown');
+                const selected = dropdown.querySelector('.selected');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+                dropdownContent.addEventListener('click', (event) => {
+                    const target = event.target;
+                    if (target.tagName === 'A') {
+                        selected.textContent = target.textContent;
+                    }
+                });
+            </script
+
+        </form>
+    </div>
+</body>
+
+</html>
