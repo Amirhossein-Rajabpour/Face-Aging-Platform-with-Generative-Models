@@ -1,0 +1,12 @@
+opencv-python
+cmake
+dlib
+scipy
+numpy
+Pandas
+tqdm
+h5py
+hydra-core
+scikit-learn
+albumentations
+omegaconf

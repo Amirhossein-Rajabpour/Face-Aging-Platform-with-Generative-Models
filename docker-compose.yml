@@ -1,0 +1,52 @@
+version: '1'
+
+services:
+  django:
+    build:
+      context: ./bsc_server
+      dockerfile: Dockerfile
+    container_name: django_server
+    ports:
+      - "8000:8000"
+    networks:
+      - my_net
+
+  flask-glow:
+    build:
+      context: ./glow_demo
+      dockerfile: Dockerfile
+    container_name: glow_container
+    ports:
+      - "4321:5050"
+    networks:
+      - my_net
+    depends_on:
+      - django
+
+  flask-cyclegan:
+    build:
+      context: ./cyclegan_demo/FaceAging-by-cycleGAN
+      dockerfile: Dockerfile
+    container_name: cyclegan_container
+    ports:
+      - "4322:5050"
+    networks:
+      - my_net
+    depends_on:
+      - django
+
+  flask-estimateage:
+    build:
+      context: ./age_estimation/age-gender-estimation-master/age-gender-estimation-master
+      dockerfile: Dockerfile
+    container_name: estimate_age_container
+    ports:
+      - "5050"
+    networks:
+      - my_net
+    depends_on:
+      - django
+
+networks:
+  my_net:
+    driver: bridge

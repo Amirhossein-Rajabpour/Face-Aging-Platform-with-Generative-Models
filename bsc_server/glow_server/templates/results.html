@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BSc Project</title>
+    <link rel="stylesheet" , href="{% static 'results.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="aligned-face">
+            <h3>Aligned Face</h3>
+            <img src={{aligned_face}}>
+            <h5>estimated age of input: {{main_age}}</h5>
+        </div>
+        <div class="images">
+            <div>
+                <h3>Glow Output (alpha: {{alpha}})</h3>
+                <img src={{img_glow}}>
+                <h5>estimated age Glow model: {{glow_age}}</h5>
+                <h5>difference: {{dif_glow}} years</h5>
+            </div>
+            <div>
+                <h3>CycleGAN Output</h3>
+                <img src={{img_cyclegan}}>
+                <h5>estimated age CycleGAN model: {{cyclegan_age}}</h5>
+                <h5>difference: {{dif_cyclegan}} years</h5>
+            </div>
+        </div>
+        <form action="/main/" method="get">
+            <button type="submit">Upload a new image</button>
+        </form>
+    </div>
+</body>
+
+
+
+
+</html>
