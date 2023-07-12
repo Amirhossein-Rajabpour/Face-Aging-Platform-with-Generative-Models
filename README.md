@@ -18,12 +18,13 @@ You should download the pre-trained models and put them in the correct directori
 
 After setting up the project and running it you are faced with the following page. Here you choose the image you want to make older/younger and choose the amount of `Alpha` which controls the amount of aging for the `Glow` model.
 
-![first page](http://url/to/img.png)
+![first page](https://github.com/Amirhossein-Rajabpour/Face-Aging-Platfrom-with-Generative-Models/blob/main/page1.png)
 
 <br>
 Then you can see the results in the second age and the estimated ages for each model.
 
-![second page](http://url/to/img.png)
+<div style="align:center"><img width="400" src="https://github.com/Amirhossein-Rajabpour/Face-Aging-Platfrom-with-Generative-Models/blob/main/vs1.png" /></div>
+
 
 ## References
 * Glow: Better reversible generative models ([link](https://openai.com/research/glow))
