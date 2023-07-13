@@ -3,7 +3,7 @@ This project focuses on the task of face aging using two generative models: [`Gl
 
 The project is implemented using a `microservice` architecture, due to the vast number of conflicting dependencies between these AI models. Each generative model is deployed as a separate microservice, allowing for independent scaling and easy integration with other services. 
 
-The project full report can be found [here]().
+The full project report (in Persian) can be found [here](https://github.com/Amirhossein-Rajabpour/Face-Aging-Platfrom-with-Generative-Models/blob/main/BSc_Project_Report_final.pdf).
 
 ## Run the project
 You can easily run the whole project without worrying about the dependencies and conflicts just by running the Docker-compose located in the root directory. Everything is handled in the related Dockerfiles.
