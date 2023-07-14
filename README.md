@@ -21,7 +21,7 @@ After setting up the project and running it you are faced with the following pag
 ![first page](https://github.com/Amirhossein-Rajabpour/Face-Aging-Platfrom-with-Generative-Models/blob/main/page1.png)
 
 <br>
-Then you can see the results in the second age and the estimated ages for each model.
+Then you can see the results in the second page and the estimated ages for each model.
 
 <div style="align:center"><img width="400" src="https://github.com/Amirhossein-Rajabpour/Face-Aging-Platfrom-with-Generative-Models/blob/main/vs1.png" /></div>
 
