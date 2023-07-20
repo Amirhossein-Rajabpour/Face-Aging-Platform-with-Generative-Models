@@ -1,4 +1,4 @@
-# Face Aging Platfrom with Generative Models
+# Face Aging Platform with Generative Models
 This project focuses on the task of face aging using two generative models: [`Glow`](https://openai.com/research/glow) and [`CycleGAN`](https://junyanz.github.io/CycleGAN/). The main objective was to explore the capabilities of these models in generating realistic and age-progressed images. Furthermore, I used the [`DEX`](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) model for estimating the age of the outputs of each model for better qualitative analysis.
 
 The project is implemented using a `microservice` architecture, due to the vast number of conflicting dependencies between these AI models. Each generative model is deployed as a separate microservice, allowing for independent scaling and easy integration with other services. 
